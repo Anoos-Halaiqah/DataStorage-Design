@@ -1,0 +1,133 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Raleway", sans-serif;
+  background-image: url(images/bg-desktop.png);
+  background-color: hsl(229, 57%, 11%);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 100px;
+}
+.container .fylo {
+  width: 450px;
+  height: 250px;
+  padding: 50px;
+  display: grid;
+  background-color: hsl(228, 56%, 26%);
+  gap: 10px;
+  border-top-right-radius: 100px;
+}
+
+.container .fylo img:first-child {
+  grid-column: span 3;
+  width: 200px;
+  padding-bottom: 50px;
+}
+.container .fylo img:not(:first-child) {
+  outline: 15px solid hsl(229, 57%, 11%);
+  border-radius: 3px;
+  width: 30px;
+  height: 30px;
+}
+
+.storage {
+  background-color: hsl(228, 56%, 26%);
+  width: 800px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  padding-left: 50px;
+  border-radius: 8px;
+}
+
+.storage .prog {
+  width: 600px;
+  height: 18px;
+  background-color: white;
+  border-radius: 8px;
+  margin: 15px 0;
+}
+.storage .prog::after {
+  content: "185 GB Left";
+  position: absolute;
+  background-color: white;
+  padding: 20px;
+  font-weight: bold;
+  font-size: 20px;
+  right: 435px;
+  top: 340px;
+  border-radius: 8px;
+  color: black;
+}
+.storage .prog::before {
+  content: "";
+  width: 2px;
+  height: 60px;
+  background-color: white;
+  position: absolute;
+  outline: 50px solid white transparent transparent transparent;
+  right: 435px;
+  top: 390px;
+}
+.storage .prog span {
+  display: block;
+  background: linear-gradient(10deg, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+  height: 100%;
+}
+.storage p {
+  color: white;
+  font-size: 20px;
+}
+.storage p span {
+  font-weight: bold;
+  color: white;
+}
+.storage span {
+  font-size: 20px;
+  color: white;
+}
+
+.storage .gigs {
+  display: flex;
+  width: 600px;
+  justify-content: space-between;
+}
+
+.attribution {
+  font-size: 50px;
+  color: white;
+}
+@media (max-width: 767px) {
+  .container {
+    flex-direction: column;
+    gap: 35px;
+  }
+  .container .fylo {
+    width: 370px;
+  }
+  .container .storage {
+    width: 370px;
+  }
+  .container .storage .prog {
+    width: 300px;
+  }
+  .container .storage .prog .progress {
+    width: 100px;
+  }
+  .container .gigs {
+    width: 300px;
+  }
+}
